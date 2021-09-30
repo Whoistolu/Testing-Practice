@@ -144,13 +144,13 @@ describe('Basic mathematical Operations', () => {
   
       // Assert
       expect(stringisCapitalized).toBe('Hello');
-    })
+    });
     test('Inputted invalid string', () => {
       // Arrange
       const string = 0;
       
       // Act and Assert
       expect(() => capitalize(string)).toThrow(Error);
-    })
-  })
+    });
+  });
 
