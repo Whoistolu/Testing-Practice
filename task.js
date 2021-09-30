@@ -37,9 +37,19 @@ class integerCalculator {
     }
   }
 
+  const capitalize = (string) => {
+    if (!typeof string) {
+      throw new Error(`string should be a 'word'`);
+    } else {
+      let firstCharacter = string.slice(0, 1).toUpperCase();
+      let restOfCharacter = string.slice(1).toLowerCase();
+    return firstCharacter + restOfCharacter;
+    }
+  }
 
 
 
 
 
-module.exports = { stringLength, reverseString, integerCalculator };
+
+module.exports = { stringLength, reverseString, integerCalculator, capitalize };

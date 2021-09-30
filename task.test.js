@@ -1,4 +1,5 @@
-const { stringLength, reverseString, integerCalculator } = require('./task');
+const { test, expect, describe } = require('@jest/globals');
+const { stringLength, reverseString, integerCalculator, capitalize } = require('./task');
 
 describe('All tests for string length', () => {
     test('return length of string', () => {
@@ -132,4 +133,24 @@ describe('Basic mathematical Operations', () => {
       });
     });
   });
+
+  describe('Return a Capitalized String', () => {
+    test(`String's first character should be capitalized`, () => {
+      // Arrange
+      const stringName = 'hello';
+  
+      //Act
+      let stringisCapitalized = capitalize(stringName);
+  
+      // Assert
+      expect(stringisCapitalized).toBe('Hello');
+    })
+    test('Inputted invalid string', () => {
+      // Arrange
+      const string = 0;
+      
+      // Act and Assert
+      expect(() => capitalize(string)).toThrow(Error);
+    })
+  })
 
