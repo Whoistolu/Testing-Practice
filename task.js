@@ -21,5 +21,7 @@ const companies = [
 ];
 
 const retailCompanies = companies.filter(company => company.category === 'retail');
+const newStart = companies.filter(company => company.start > 1999 && company.start < 2021);
 
 console.log(retailCompanies);
+console.log(newStart);
