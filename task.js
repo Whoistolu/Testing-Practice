@@ -1,55 +1,25 @@
-const stringLength = (string) => {
-    if (string.length < 1 || string.length >= 10) {
-        throw new Error('This is an invalid string')
-    };
-return string.length
-};
+//using the filter(), map(), sort() and reduce() method
 
+const ages = [12, 16, 17, 19, 85, 42, 22, 44, 55, 66, 77, 09, 10, 15];
 
-const reverseString = (string) => {
-    let reversedString = string.toLowerCase().split('').reverse().join('');
-    return reversedString;
-};
+// const newAge = ages.filter((age) => {
+//   if (age <= 21) {
+//     return true;
+//   }
+// })
+// console.log(newAge);
 
+const newAge = ages.filter(age => age >40);
 
+console.log(newAge);
 
-class integerCalculator {
-    constructor(firstNumber, secondNumber) {
-      this.firstNumber = firstNumber;
-      this.secondNumber = secondNumber;
-    }
-  
-    addNumbers() {
-      return this.firstNumber + this.secondNumber;
-    }
-  
-    subtractNumbers() {
-      return this.firstNumber - this.secondNumber;
-    }
-  
-    multiplyNumbers() {
-      return this.firstNumber * this.secondNumber;
-    }
-  
-    divideNumbers() {
-      const quotient = (this.firstNumber / this.secondNumber).toFixed(2);
-      return parseFloat(quotient, 10);
-    }
-  }
+const companies = [
+  {name: 'company one', category: 'finance', start: 2020, end: 2021},
+  {name: 'company two', category: 'auto', start: 1999, end: 2002},
+  {name: 'company three', category: 'retail', start: 2002, end: 2006},
+  {name: 'company four', category: 'retail', start: 2005, end: 2011},
+];
 
-  const capitalize = (string) => {
-    if (!typeof string) {
-      throw new Error(`string should be a 'word'`);
-    } else {
-      let firstCharacter = string.slice(0, 1).toUpperCase();
-      let restOfCharacter = string.slice(1).toLowerCase();
-    return firstCharacter + restOfCharacter;
-    }
-  }
+const retailCompanies = companies.filter(company => company.category === 'retail');
 
-
-
-
-
-
-module.exports = { stringLength, reverseString, integerCalculator, capitalize };
+console.log(retailCompanies);
